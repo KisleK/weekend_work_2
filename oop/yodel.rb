@@ -10,13 +10,14 @@
 
 class Yodel
   attr_reader :segment, :count
-  def initialize(hash_input)
-    @segment = hash_input[:segment]
-    @count = hash_input[:count]
+  def initialize(input)
+    @segment = input[:segment]
+    @count = input[:count]
   end
 
   def articulate
-    @count.to_s * @segment
+    @segment * @count
+#I had a hard time figuring out why I couldn't use @count * @segement until I realized you couldn't multiply 4 by a string but you could multiply a string by 4.
 
   end
 end
